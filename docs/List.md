@@ -1019,15 +1019,16 @@ import { List, Responsive, SimpleList, Datagrid, TextField, ReferenceField, Edit
 export const PostList = (props) => (
     <List {...props}>
         <Responsive
-            small={
+            small={props =>
                 <SimpleList
                     primaryText={record => record.title}
                     secondaryText={record => `${record.views} views`}
                     tertiaryText={record => new Date(record.published_at).toLocaleDateString()}
+                    {...props}
                 />
             }
-            medium={
-                <Datagrid>
+            medium={props => 
+                <Datagrid {...props}>
                     ...
                 </Datagrid>
             }
@@ -1190,7 +1191,7 @@ const CommentGrid = ({ ids, data, basePath }) => (
             <CardHeader
                 title={props => <TextField record={data[id]} source="author.name" {...props} />}
                 subheader={props => <DateField record={data[id]} source="created_at" {...props} />}
-                avatar={props => <Avatar icon={<PersonIcon />} {...props} />}
+                avatar={props => <Avatar {...props}><PersonIcon /></Avatar>}
             />
             <CardContent>
                 <TextField record={data[id]} source="body" />
