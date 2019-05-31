@@ -117,7 +117,7 @@ The list is already functional: you can reorder it by clicking on column headers
 
 ## Selecting Columns
 
-The `<ListGuesser>` component is not meant to be used in production - it's just a way to quicky bootstrap an admin. That means you'll have to replace the `ListGuesser` component in the `users` resource by a custom React component. Fortunately, `ListGuesser` dumps the code of the list it has guessed to the console:
+The `<ListGuesser>` component is not meant to be used in production - it's just a way to quickly bootstrap an admin. That means you'll have to replace the `ListGuesser` component in the `users` resource by a custom React component. Fortunately, `ListGuesser` dumps the code of the list it has guessed to the console:
 
 ![Guessed Users List](./img/tutorial_guessed_list.png)
 
